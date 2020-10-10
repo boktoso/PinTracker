@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Models\Pin;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/pin/{id}', function($id) {
-    return new Pins($id);
-})->name('getPin');
+
+
+Route::get('pin', 'PinController@index');
+Route::get('pin/{pin}', 'PinController@show');
+Route::post('pin', 'PinController@store');
+Route::put('pin/{pin}', 'PinController@update');
+Route::delete('pin/{pin}', 'PinController@delete');

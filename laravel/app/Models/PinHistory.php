@@ -8,7 +8,6 @@ class PinHistory extends Model {
 
     protected $fillable = [
         'pin_id',
-        'createDate',
         'latitude',
         'longitude',
     ];
