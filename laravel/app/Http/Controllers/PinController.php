@@ -8,20 +8,28 @@ use App\Models\PinHistory;
 
 class PinController extends Controller {
 
-    public function index() {
+    public function getAllPins() {
         return Pin::all();
     }
 
-    public function show(Pin $pin) {
-        return $pin;
+    public function getPin($id) {
+        $pin = Pin::find($id);
+        if (!empty($pin->id)) {
+            return $pin;
+        }
+        return response()->json([
+            "error" => "Pin not found",
+        ], 404);
     }
 
-    public function store(Request $request) {
+    public function createPin(Request $request) {
+        // TODO Add validation for fields that are needed.
         $pin = Pin::create($request->all());
         return response()->json($pin, 201);
     }
 
-    public function update(Request $request, Pin $pin) {
+    public function updatePin(Request $request, $id) {
+        $pin = Pin::find($id);
         // Create history for update.
         PinHistory::create([
             'pin_id' => $pin->id,
@@ -32,7 +40,8 @@ class PinController extends Controller {
         return response()->json($pin, 200);
     }
 
-    public function delete(Pin $pin) {
+    public function deletePin($id) {
+        $pin = Pin::find($id);
         $pin->delete();
         return response()->json(NULL, 204);
     }

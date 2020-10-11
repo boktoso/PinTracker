@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Models\Pin;
+use App\Models\PinHistory;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('pin', 'PinController@index');
-Route::get('pin/{pin}', 'PinController@show');
-Route::post('pin', 'PinController@store');
-Route::put('pin/{pin}', 'PinController@update');
-Route::delete('pin/{pin}', 'PinController@delete');
+Route::get('pin', 'PinController@getAllPins');
+Route::get('pin/{id}', 'PinController@getPin');
+Route::post('pin', 'PinController@createPin');
+Route::put('pin/{id}', 'PinController@updatePin');
+Route::delete('pin/{id}', 'PinController@deletePin');
 
-Route::get('pin/{pin}/history', 'PinHistoryController@getForPinByPin');
-Route::get('pinhistory', 'PinHistoryController@index');
-Route::get('pinhistory/{pinhistory}', 'PinHistoryController@show');
+Route::get('pin/{id}/history', 'PinHistoryController@getPinHistoryListForPin');
+Route::get('pinhistory', 'PinHistoryController@listAllPinHistories');
+Route::get('pinhistory/{id}', 'PinHistoryController@getPinHistory');
