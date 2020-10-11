@@ -17,8 +17,8 @@ class CreatePinsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('rfidNumber');
-            $table->integer('latitude');
-            $table->integer('longitude');
+            $table->double('latitude', 8, 6);
+            $table->double('longitude', 9, 6);
         });
     }
 

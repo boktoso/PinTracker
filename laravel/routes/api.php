@@ -24,3 +24,7 @@ Route::get('pin/{pin}', 'PinController@show');
 Route::post('pin', 'PinController@store');
 Route::put('pin/{pin}', 'PinController@update');
 Route::delete('pin/{pin}', 'PinController@delete');
+
+Route::get('pin/{pin}/history', 'PinHistoryController@getForPinByPin');
+Route::get('pinhistory', 'PinHistoryController@index');
+Route::get('pinhistory/{pinhistory}', 'PinHistoryController@show');

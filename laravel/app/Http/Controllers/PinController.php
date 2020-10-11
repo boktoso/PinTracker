@@ -24,9 +24,9 @@ class PinController extends Controller {
     public function update(Request $request, Pin $pin) {
         // Create history for update.
         PinHistory::create([
-            'pin_id' => $pin->getId(),
-            'latitude' => $pin->getLatitude(),
-            'longitude' => $pin->getLongitude(),
+            'pin_id' => $pin->id,
+            'latitude' => $pin->latitude,
+            'longitude' => $pin->longitude,
         ]);
         $pin->update($request->all());
         return response()->json($pin, 200);

@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa8ee54b-47bb-4478-87c0-177389ec3683" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PinController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PinHistoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PinsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PinHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PinHistory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PinController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_224436_create_pins_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_10_224436_create_pins_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_224649_create_pin_histories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_10_224649_create_pin_histories_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602363405168</updated>
       <workItem from="1602363406521" duration="51000" />
-      <workItem from="1602363464611" duration="9664000" />
+      <workItem from="1602363464611" duration="14088000" />
     </task>
     <servers />
   </component>
@@ -213,6 +216,10 @@
       <screen x="0" y="0" width="3072" height="1728" />
     </state>
     <state x="1358" y="646" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.3072.1728/-3840.0.3072.1728/3840.0.3072.1728@0.0.3072.1728" timestamp="1602369840192" />
+    <state x="499" y="622" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602385710548">
+      <screen x="0" y="0" width="3072" height="1728" />
+    </state>
+    <state x="499" y="622" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.3072.1728/-3840.0.3072.1728/3840.0.3072.1728@0.0.3072.1728" timestamp="1602385710548" />
     <state x="1140" y="680" key="FileChooserDialogImpl" timestamp="1602363758896">
       <screen x="0" y="0" width="3072" height="1728" />
     </state>

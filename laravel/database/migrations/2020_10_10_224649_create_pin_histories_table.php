@@ -18,8 +18,8 @@ class CreatePinHistoriesTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('pin_id');
             $table->foreign('pin_id')->references('id')->on('pins');
-            $table->integer('latitude');
-            $table->integer('longitude');
+            $table->double('latitude', 8, 6);
+            $table->double('longitude', 9, 6);
         });
     }
 
