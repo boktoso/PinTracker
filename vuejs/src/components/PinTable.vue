@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button variant="success">ADD</b-button>
+    <AddPin></AddPin>
     <b-table striped hover :items="pins" :fields="fields"></b-table>
   </div>
 </template>
@@ -8,6 +8,7 @@
 <script>
 import {getAllPins} from '@/requests/pins';
 import moment from 'moment';
+import AddPin from '@/components/Controls/AddPin';
 
 const formatPinData = (data) => {
   var newData = [];
@@ -24,6 +25,10 @@ const formatPinData = (data) => {
 
 export default {
   name: 'PinTable',
+  components: {AddPin},
+  comments: {
+    AddPin
+  },
   data() {
     return {
       fields: [
