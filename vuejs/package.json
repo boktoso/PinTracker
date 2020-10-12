@@ -16,8 +16,12 @@
     "dotenv": "^8.2.0",
     "google-maps": "^4.3.3",
     "google-maps-api-loader": "^1.1.1",
+    "moment": "^2.29.1",
+    "node-sass": "^4.14.1",
     "sass": "^1.27.0",
-    "vue": "^2.6.11"
+    "sass-loader": "^10.0.3",
+    "vue": "^2.6.11",
+    "vue-moment": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

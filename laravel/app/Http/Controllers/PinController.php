@@ -9,7 +9,7 @@ use App\Models\PinHistory;
 class PinController extends Controller {
 
     public function getAllPins() {
-        return Pin::all();
+        return response()->json(Pin::all(), 200)->header('Access-Control-Allow-Origin', '*');
     }
 
     public function getPin($id) {
