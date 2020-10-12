@@ -1,32 +1,48 @@
 <template>
-  <div class="google-map" />
+  <div>
+    <div
+        class="google-map"
+        ref="googleMap"
+    ></div>
+    <template v-if="Boolean(this.google) && Boolean(this.map)">
+      <slot
+          :google="google"
+          :map="map"
+      />
+    </template>
+  </div>
 </template>
 
 <script>
-import gmapsInit from '@/utils/gmaps';
+import GoogleMapsApiLoader from "google-maps-api-loader";
+
 export default {
-  name: 'GoogleMap',
   props: {
-    mapConfig: Object
+    mapConfig: Object,
+    apiKey: String
   },
+
+  data() {
+    return {
+      google: null,
+      map: null
+    };
+  },
+
   async mounted() {
-    try {
-      const google = await gmapsInit();
-      const geocoder = new google.maps.Geocoder();
-      const map = new google.maps.Map(this.$el);
-
-      geocoder.geocode({ address: 'Charlotte, NC' }, (results, status) => {
-        if (status !== 'OK' || !results[0]) {
-          throw new Error(status);
-        }
-
-        map.setCenter(results[0].geometry.location);
-        map.fitBounds(results[0].geometry.viewport);
-      });
-    } catch (error) {
-      console.error(error);
-    }
+    const googleMapApi = await GoogleMapsApiLoader({
+      apiKey: this.apiKey
+    });
+    this.google = googleMapApi;
+    this.initializeMap();
   },
+
+  methods: {
+    initializeMap() {
+      const mapContainer = this.$refs.googleMap;
+      this.map = new this.google.maps.Map(mapContainer, this.mapConfig);
+    }
+  }
 };
 </script>
 
@@ -34,5 +50,7 @@ export default {
 .google-map {
   width: 100%;
   min-height: 100%;
+  height: 75vh;
+  max-height: 500px;
 }
 </style>
