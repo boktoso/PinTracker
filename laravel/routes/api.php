@@ -20,12 +20,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('pin', 'PinController@getAllPins');
-Route::get('pin/{id}', 'PinController@getPin');
-Route::post('pin', 'PinController@createPin');
-Route::put('pin/{id}', 'PinController@updatePin');
-Route::delete('pin/{id}', 'PinController@deletePin');
+Route::middleware('cors')->get('pin', 'PinController@getAllPins');
+Route::middleware('cors')->get('pin/{id}', 'PinController@getPin');
+Route::middleware('cors')->post('pin', 'PinController@createPin');
+Route::middleware('cors')->put('pin/{id}', 'PinController@updatePin');
+Route::middleware('cors')->delete('pin/{id}', 'PinController@deletePin');
 
-Route::get('pin/{id}/history', 'PinHistoryController@getPinHistoryListForPin');
-Route::get('pinhistory', 'PinHistoryController@listAllPinHistories');
-Route::get('pinhistory/{id}', 'PinHistoryController@getPinHistory');
+Route::middleware('cors')->get('pin/{id}/history', 'PinHistoryController@getPinHistoryListForPin');
+Route::middleware('cors')->get('pinhistory', 'PinHistoryController@listAllPinHistories');
+Route::middleware('cors')->get('pinhistory/{id}', 'PinHistoryController@getPinHistory');

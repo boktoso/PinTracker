@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Pin;
 
-class PinController extends TestCase {
+class PinControllerTest extends TestCase {
 
     use WithFaker;
     use RefreshDatabase;

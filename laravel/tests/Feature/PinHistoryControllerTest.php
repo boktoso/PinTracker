@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class PinHistoryController extends TestCase {
+class PinHistoryControllerTest extends TestCase {
 
     use WithFaker;
     use RefreshDatabase;
@@ -63,6 +63,7 @@ class PinHistoryController extends TestCase {
                 "longitude" => 25.0,
             ]);
     }
+
     public function testGetPinHistoryDetailsWith404() {
         $response = $this->get('api/pinhistory/notfound');
         $response
